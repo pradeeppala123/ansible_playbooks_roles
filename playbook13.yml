@@ -1,0 +1,17 @@
+---
+- name: start mysql as a container
+  hosts: all
+  tasks:
+   - name: Start mysql as a container
+     docker_container:
+      image: mysql:5
+      name: mydb
+      state: started
+      env: 
+        MYSQL_ROOT_PASSWORD: intelliq
+   - name: Start word press and linux with my sql
+     docker_container:
+      image: word press
+      state: latest
+      name: my word press
+

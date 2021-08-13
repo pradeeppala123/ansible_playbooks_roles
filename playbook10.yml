@@ -1,0 +1,10 @@
+---
+- name: Uninstall git
+  hosts: all
+  tasks:
+   - name: Uninstall git
+     apt:
+      name: git
+      state: absent
+      purge: yes
+...

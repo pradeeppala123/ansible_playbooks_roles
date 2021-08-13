@@ -1,0 +1,15 @@
+---
+- name: Cretae ci-cd environment using docker,ansible
+  hosts: all
+  tasks:
+   - name: Create a jenkins container
+     docker_container:
+       image: jenkins
+       name: devserver
+       ports:
+        - 5050:8080
+   - name: Create a tomcat as QA server
+     docker_container:
+       image: tomcat
+       name: qa server
+...

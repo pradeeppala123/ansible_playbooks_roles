@@ -1,0 +1,10 @@
+---
+- name: Installing s/w packages using host variables
+  hosts: 10.1.1.11
+  tasks:
+   - name: Install s/w
+     apt: 
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

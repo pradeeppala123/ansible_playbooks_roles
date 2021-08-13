@@ -1,0 +1,14 @@
+---
+- name: Push image from managed nodes into dockerhub
+  hosts: 10.1.1.11  
+  tasks:
+   - name: Login into dockerhub
+     docker_login:
+       username: pradeep123pala
+       password: 16kB1@0231
+       email: pradeeppala123@gmail.com
+   - name: push the customised docker image
+     docker_image:
+       name: pradeep123pala/centos_13_9_aug
+       push: yes
+...

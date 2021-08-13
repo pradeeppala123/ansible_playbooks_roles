@@ -1,0 +1,16 @@
+--- 
+- 
+  hosts: all
+  name: "Install s/w packages"
+  tasks: 
+    - 
+      apt: 
+        name: "{{item}}"
+        state: present
+        update_cache: true
+      name: "Install packages"
+      with_item: 
+        - tree
+        - apache2
+        - git
+

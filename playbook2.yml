@@ -1,0 +1,23 @@
+--- 
+- 
+  hosts: all
+  name: "Installing s/w packages"
+  tasks: 
+    - 
+      apt: 
+        name: tree
+        state: present
+        update_cache: false
+      name: "Installing tree"
+    - 
+      apt: 
+        name: apache2
+        state: present
+        update_cache: false
+      name: "Installing apache2"
+    - 
+      apt: 
+        name: git
+        state: present
+        update_cache: false
+      name: "Installing git"

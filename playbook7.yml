@@ -1,0 +1,12 @@
+---
+- name: Uninstalling the s/w packages
+  hosts: all
+  tasks: 
+   - name: unstall packages
+     service:  
+      name: "{{item}}"
+      state: stopped
+     with_items:
+      - tree
+...
+  
